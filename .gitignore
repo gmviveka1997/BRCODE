@@ -1,0 +1,6 @@
+.DS_Store
+standard_filing/.venv/
+standard_filing/__pycache__/
+standard_filing/*.pyc
+standard_filing/standard_filing.db
+standard_filing/uploads/

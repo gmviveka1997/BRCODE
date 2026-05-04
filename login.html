@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Sign in — Nandi Group{% endblock %}
+{% block body %}
+<section class="hero-login">
+  <div class="hero-copy">
+    <p class="eyebrow">Nandi Group</p>
+    <h1>Welcome back</h1>
+    <p class="lede">Secure document filing for administrators and field teams. Sign in to continue.</p>
+    <ul class="hero-points">
+      <li>Indexed PDF storage</li>
+      <li>Role-based access</li>
+    </ul>
+  </div>
+  <div class="panel login-panel">
+    <div class="panel-head">
+      <h2 class="panel-kicker">Portal access</h2>
+      <p class="panel-sub">Use the credentials issued by your administrator.</p>
+    </div>
+    <form method="post" class="form-grid">
+      <label class="field">
+        <span>Member reference</span>
+        <input type="text" name="username" autocomplete="username" required autofocus placeholder="Your reference" />
+      </label>
+      <label class="field">
+        <span>Access key</span>
+        <input type="password" name="password" autocomplete="current-password" required placeholder="••••••••" />
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">
+        <span>Continue</span>
+        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+{% endblock %}

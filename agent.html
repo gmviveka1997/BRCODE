@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Agent — Nandi Group{% endblock %}
+{% block body %}
+<section class="split-hero">
+  <div>
+    <p class="eyebrow">Nandi Group · Field access</p>
+    <h1>Retrieve by ID</h1>
+    <p class="lede">Enter the document ID you received. The file opens in the viewer below.</p>
+  </div>
+</section>
+
+<div class="panel agent-form-panel">
+  <form method="post" class="form-inline">
+    <label class="field grow">
+      <span>Document ID</span>
+      <input type="text" name="unique_id" value="{{ lookup_id or '' }}" placeholder="Enter ID" autocomplete="off" />
+    </label>
+    <button type="submit" class="btn btn-primary">Open PDF</button>
+  </form>
+</div>
+
+{% if document %}
+<div class="viewer-wrap panel">
+  <h2 class="panel-title">Viewer · {{ document.unique_id }}</h2>
+  <iframe
+    class="pdf-frame"
+    title="PDF preview"
+    src="{{ url_for('view_pdf', unique_id=document.unique_id) }}"
+  ></iframe>
+  <p class="muted small">
+    <a href="{{ url_for('view_pdf', unique_id=document.unique_id) }}" target="_blank" rel="noopener">Open in new tab</a>
+  </p>
+</div>
+{% endif %}
+{% endblock %}
